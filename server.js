@@ -10,7 +10,9 @@ app.use((req, res, next)=>{
     console.log(req.method, req.url, req.body, new Date(), new Date().toLocaleTimeString());
     next();
 })
-app.use(cors());
+app.use(cors({
+    origin:'*'
+}));
 app.use(express.json());
 connectDB();
 app.use('/tasks',router)
