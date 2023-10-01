@@ -18,7 +18,9 @@ connectDB();
 app.use('/tasks',router)
 
 
-
+app.get('/',(req,res)=>{
+    res.status(200).send("Welcome to backend");
+})
 app.listen(PORT,()=>{
     console.log("Server running on port",PORT);
 })
